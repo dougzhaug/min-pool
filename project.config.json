@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wxd111a3d596e26b85",
-	"projectname": "Pool",
+	"projectname": "min-pool",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
