@@ -1,0 +1,20 @@
+<view class='container'>
+  <view class='header'></view>
+  <view class='body'>
+    <view class="list-body">
+      <view class="list-item" wx:for="{{list}}" >
+        <!-- <view class="item-id" style='background-color:#a{{item.sn}}'>{{item.sn}}</view> -->
+        <view class="item-title">{{item.sn}}. {{item.title}}</view>
+        <view class="item-icon"> <view class="iconfont iconnext"></view> </view>
+      </view>
+
+      <view class="list-item">
+        <view class="item-id">11</view>
+        <view class="item-title">卡卡是打开《静安寺的看法》</view>
+        <view class="item-icon"></view>
+      </view>
+
+    </view>
+  </view>
+  <view class='footer'></view>
+</view>

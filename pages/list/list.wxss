@@ -1,0 +1,45 @@
+.list-item{
+  /* margin-top: 10rpx; */
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-bottom: 1px solid gainsboro;
+}
+.item-id{
+  font-size: 18px;
+  width: 120rpx;
+  height: 100%;
+  /* background-color: rebeccapurple; */
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  border-right: 1px dashed gainsboro;
+}
+.item-title{
+  display: flex;
+  align-items:center;
+  flex-direction: row;
+  font-size: 16px;
+  color:#272727;
+  width: 90%;
+  /* margin-left: 20rpx; */
+    /**多行自动隐藏**/
+  overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  /* background-color: blue; */
+  /* border-right: 1px solid #ff0010; */
+}
+
+.item-icon{
+  height: 100%;
+  width: 10%;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  /* background-color: khaki; */
+}
