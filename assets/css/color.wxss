@@ -16,3 +16,7 @@
 .green{
   color:#02C874;
 }
+/* 灰色 */
+.gray{
+  color:#EAEAEA;
+}

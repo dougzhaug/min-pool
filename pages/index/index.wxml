@@ -5,32 +5,32 @@
   <view class='body'>
     <view class='pool-list'>
       <view class='pool-item'>
-        <view class='item-title item-color-orange' bindtap="toggleItem" data-id='1'> <icon type='info' color='green'/> <view class='title'> 初级题库 </view></view>
+        <view class='item-title item-color-orange' bindtap="toggleItem" data-id='1'> <view class="item-icon iconfont iconbook_icon"></view> <view class='title'> 初级题库 </view></view>
         <view class="item-body" hidden='{{itemBody_1}}' style='transition: opacity 2s'>
-          <view class='item-body-content'>中世纪看爱看i喀什地方看看快递啊打裂缝卡卡士大夫中世纪看爱看i喀什地方看看快递啊打裂缝卡卡中世纪看爱看i喀什地方看看快递啊打裂缝卡卡中世纪看爱看i喀什地方看看快递啊打裂缝卡卡</view>
+          <view class='item-body-content'>中世纪看爱看i喀什地方看看快递啊打裂缝卡卡士大夫中世纪看爱看i喀什地方看看快递啊打裂缝卡卡中世纪看爱看i喀什地方看看快递啊打裂缝</view>
           <view class='item-body-button'>
-            <button type='primary' size='mini' data-id='1' bindtap='goList'>开始背题</button>
-            <button type='primary' size='mini'>开始答题</button>  
+            <button type='primary' data-id='1' bindtap='goList'>开始背题</button>
+            <button type='primary' >开始答题</button>  
           </view>
         </view>
       </view>
       <view class='pool-item'>
-        <view class='item-title item-color-purple' bindtap="toggleItem" data-id='2' > <view class='icon'>图标</view> <view class='title'> 初级题库 </view></view>
+        <view class='item-title item-color-purple' bindtap="toggleItem" data-id='2' > <view class="item-icon iconfont iconbook_icon"></view> <view class='title'> 中级题库 </view></view>
         <view class='item-body' hidden='{{itemBody_2}}' style='transition: opacity 1s'>
           <view class='item-body-content'>中世纪看爱看i喀什地方看看快递啊打裂缝卡卡士大夫中世纪看爱看i喀什地方看看快递啊打裂缝卡卡中世纪看爱看i喀什地方看看快递啊打裂缝卡卡中世纪看爱看i喀什地方看看快递啊打裂缝卡卡</view>
           <view class='item-body-button'>
-            <button type='primary' size='mini'>开始背题</button>
-            <button type='primary' size='mini'>开始答题</button>  
+            <button type='primary' data-id='2' bindtap='goList'>开始背题</button>
+            <button type='primary'>开始答题</button>  
           </view>
         </view>
       </view>
             <view class='pool-item'>
-        <view class='item-title item-color-blue' bindtap="toggleItem" data-id='3'> <icon type='info' color='green'/> <view class='title'> 初级题库 </view></view>
+        <view class='item-title item-color-blue' bindtap="toggleItem" data-id='3'> <view class="item-icon iconfont iconbook_icon"></view> <view class='title'> 高级题库 </view></view>
         <view class="item-body" hidden='{{itemBody_3}}'>
           <view class='item-body-content'>中世纪看爱看i喀什地方看看快递啊打裂缝卡卡士大夫中世纪看爱看i喀什地方看看快递啊打裂缝卡卡中世纪看爱看i喀什地方看看快递啊打裂缝卡卡中世纪看爱看i喀什地方看看快递啊打裂缝卡卡</view>
           <view class='item-body-button'>
-            <button type='primary' size='mini'>开始背题</button>
-            <button type='primary' size='mini'>开始答题</button>  
+            <button type='primary' data-id='3' bindtap='goList'>开始背题</button>
+            <button type='primary'>开始答题</button>  
           </view>
         </view>
       </view>

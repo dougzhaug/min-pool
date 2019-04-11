@@ -41,12 +41,22 @@
   <view class='body'>
     <view class="body-box">
       <view class="body-item">
-        <view class="body-item-icon"></view>
-        <view class="body-item-text"></view>
-        <view class=""></view>
+        <view class="body-item-icon iconfont icondevicesettings red"></view>
+        <view class="body-item-text">设置</view>
+        <view class="body-item-next iconfont iconnext"></view>
+      </view>
+      <view class="body-item">
+        <view class="body-item-icon iconfont iconsafety blue"></view>
+        <view class="body-item-text">安全中心</view>
+        <view class="body-item-next iconfont iconnext"></view>
+      </view>
+      <view class="body-item">
+        <view class="body-item-icon iconfont icontelephone green"></view>
+        <view class="body-item-text">客服中心</view>
+        <view class="body-item-next iconfont iconnext"></view>
       </view>
     </view>
-    <view class="body-footer">退出登录</view>
+    <view class="body-footer red">退出登录</view>
   </view>
   <view class='footer'></view>
 </view>

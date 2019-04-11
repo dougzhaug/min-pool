@@ -23,30 +23,40 @@
   display: flex;
   align-items: center;
 }
+.item-icon{
+  margin-left: 20rpx;
+  font-size: 32px;
+}
 .title{
   margin-left: 20rpx;
   font-size: 50rpx;
 }
 
 .item-body{
-  height: 240rpx;
+  height: 340rpx;
 }
 
 .item-body-content{
-  background-color: bisque;
-  height: 60%;
-  padding-left: 10rpx;
-  padding-right: 10rpx;
-  font-size: 14px;
+  margin: 20rpx 0;
+  color:black;
+  /* background-color: bisque; */
+  /* height: 48%; */
+  padding: 0 30rpx;
+  /* font-size: 14px; */
   /**多行自动隐藏**/
-  display: block;
+  position:relative;
+  line-height:1.4em;
+  height:4.2em;/* 3 倍line-height  多少倍就是多少行*/
+  overflow:hidden;
+
+  /* display: block;
   display: -webkit-box;
   -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
 }
 .item-body-button{
   display: flex;
-  margin-top: 20rpx;
+  margin-top: 30rpx;
 }
