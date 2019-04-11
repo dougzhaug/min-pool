@@ -1,0 +1,52 @@
+<!--pages/my/my.wxml-->
+<view class='container'>
+  <!-- header -->
+  <view class='header'>
+    <view class="header-user">
+      <view class="user-left">
+        <image
+          src="http://wx.qlogo.cn/mmopen/An3cibgIYjcZ7jl2Dafaic1nt8mcDIHZKm611KmYeR9emPUvbiayJg4pH4LuxuISfJ1LOt9uzJ43ddgY8REGBBfGVjeLfjS0QVo/0"
+        ></image>
+      </view>
+      <view class="user-right">
+        <view class="user-item nickname">昵称</view>
+        <view class="user-item details"> <view class="sex iconfont iconxingbienan1"></view> <view class="phone">18830102005</view> </view>
+      </view>
+    </view>
+    <view class="header-user-datum">
+      <view class="datum-item">
+        <view class="datum-item-top blue">
+          <view class="item-top-number">1</view>
+          <view class="item-top-unit">题</view>
+        </view>
+        <view class="datum-item-below">已背</view>
+      </view>
+      <view class="datum-item">
+        <view class="datum-item-top orange">
+          <view class="item-top-number">221</view>
+          <view class="item-top-unit">题</view>
+        </view>
+        <view class="datum-item-below">未背</view>
+      </view>
+      <view class="datum-item">
+        <view class="datum-item-top green">
+          <view class="item-top-number">100</view>
+          <view class="item-top-unit">分</view>
+        </view>
+        <view class="datum-item-below">积分</view>
+      </view>
+    </view>
+  </view>
+  <!-- header end -->
+  <view class='body'>
+    <view class="body-box">
+      <view class="body-item">
+        <view class="body-item-icon"></view>
+        <view class="body-item-text"></view>
+        <view class=""></view>
+      </view>
+    </view>
+    <view class="body-footer">退出登录</view>
+  </view>
+  <view class='footer'></view>
+</view>

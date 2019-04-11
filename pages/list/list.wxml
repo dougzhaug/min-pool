@@ -1,18 +1,41 @@
 <view class='container'>
-  <view class='header'></view>
+  <!-- header -->
+  <view class='header'>
+    <view class="header-tab">
+      <view class="tab-item {{tab=='all' ? 'tba-itme-action' : ''}}" bindtap="toggleTabs" data-type="all">
+        <view class="tab-item-box">全部</view>
+      </view>
+      <view class="tab-item {{tab=='read' ? 'tba-itme-action' : ''}}" bindtap="toggleTabs" data-type="read">
+        <view class="tab-item-box">已背</view>
+      </view>
+      <view class="tab-item {{tab=='unread' ? 'tba-itme-action' : ''}}" bindtap="toggleTabs" data-type="unread">
+        <view class="tab-item-box">未背</view>
+      </view>
+    </view>
+
+    <view class="header-search">
+      <navigator
+        url="/pages/search/search?type={{tab}}"
+        hover-class="navigator-hover"
+      >
+        <view class="search-icon iconfont iconsearch"></view>
+      </navigator>
+    </view>
+  </view>
+  <!-- header end -->
   <view class='body'>
     <view class="list-body">
-      <view class="list-item" wx:for="{{list}}" >
-        <!-- <view class="item-id" style='background-color:#a{{item.sn}}'>{{item.sn}}</view> -->
-        <view class="item-title">{{item.sn}}. {{item.title}}</view>
-        <view class="item-icon"> <view class="iconfont iconnext"></view> </view>
-      </view>
 
-      <view class="list-item">
-        <view class="item-id">11</view>
-        <view class="item-title">卡卡是打开《静安寺的看法》</view>
-        <view class="item-icon"></view>
-      </view>
+      <navigator wx:for="{{list}}"
+        wx:key="{{index}}"
+        url="/pages/detail/detail?sn={{itme.sn}}"
+        hover-class="navigator-hover"
+      >
+        <view class="list-item" >
+          <view class="item-title">{{item.sn}}. {{item.title}}</view>
+          <view class="item-icon"> <view class="iconfont iconnext"></view> </view>
+        </view>
+      </navigator>
 
     </view>
   </view>

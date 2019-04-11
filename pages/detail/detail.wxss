@@ -19,7 +19,7 @@
   display:flex;
   align-items:center;
   height: 90rpx;
-  border-bottom: 1px solid gainsboro;
+  border-bottom: 1rpx solid gainsboro;
 }
 .question-title-icon{
   display:flex;
@@ -29,7 +29,7 @@
   height: 46%;
   margin-left: 23rpx;
   font-size: 32px;
-  border-left: 3px solid royalblue;
+  border-left: 3px solid orange;
 }
 .question-title-text{
   margin-left: 20rpx;
@@ -56,7 +56,7 @@
   display:flex;
   align-items:center;
   height: 90rpx;
-  border-bottom: 1px solid gainsboro;
+  border-bottom: 1rpx solid gainsboro;
 }
 .answers-title-icon{
   display:flex;
@@ -66,7 +66,7 @@
   height: 46%;
   margin-left: 23rpx;
   font-size: 32px;
-  border-left: 3px solid orange;
+  border-left: 3px solid var(--hue);
 }
 .answers-title-text{
   margin-left: 20rpx;

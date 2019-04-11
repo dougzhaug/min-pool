@@ -1,54 +1,46 @@
-/**header**/
+/* pages/search/search.wxss */
+/* header */
 .header{
+  height: var(--headerHeight);
   display: flex;
   align-items:center;
-  /* justify-content:center; */
   justify-content: space-between;
   border-bottom: 1rpx solid gainsboro;
+  background-color: #e6e6e6;
 }
 
-.header-tab{
-  /* margin-left: 80rpx; */
-  width:100%; 
-  height: var(--headerHeight);
-  /* background-color: red; */
+.header-input{
   display: flex;
   align-items:center;
-  justify-content:center;
+  height: 72%;
+  width: 100%;
+  background-color: white;
+  border-radius:5px;
+  margin-left: 20rpx;
 }
 
-.tab-item{
-  height: 100%;
-  margin-left:60rpx; 
+.header-icon{
   display: flex;
   align-items:center;
-  justify-content:center;
+  justify-content: center;
+  width: 60rpx;
+}
+
+.header-input input{
+  display: flex;
+  justify-content: center;
+}
+
+.header-button{
+  width: 120rpx;
+  margin-left: 26rpx;
   font-weight:bold;
 }
 
-.tba-itme-action{
-  color: var(--hue);
-  border-bottom: 2px solid var(--hue);
-}
-
-.header-search{
-  text-align:center;
-  min-width: var(--headerHeight);
-  display: flex;
-  align-items:center;
-  justify-content:center;
-  border-left: 1rpx solid gainsboro;
-}
-
-.search-icon{
-  font-size: 22px;
-  color:var(--hue);
-  font-weight:bold;
-}
+/* header end */
 
 /**body**/
 .list-item{
-  /* margin-top: 10rpx; */
   height: 110rpx;
   display: flex;
   align-items: center;
@@ -60,7 +52,6 @@
   font-size: 18px;
   width: 120rpx;
   height: 100%;
-  /* background-color: rebeccapurple; */
   display: flex;
   align-items:center;
   justify-content:center;
@@ -73,15 +64,13 @@
   font-size: 16px;
   color:#272727;
   width: 90%;
-  /* margin-left: 20rpx; */
+
     /**多行自动隐藏**/
   overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-  /* background-color: blue; */
-  /* border-right: 1px solid #ff0010; */
 }
 
 .item-icon{
@@ -90,5 +79,5 @@
   display: flex;
   align-items:center;
   justify-content:center;
-  /* background-color: khaki; */
 }
+/* body end */

@@ -1,10 +1,10 @@
 Page({
   data:{
-    color:99,
+    tab:'all',
     list:[
       {
         sn:2,
-        title:'公开考试的分裂势力的',
+        title:'《广深港高速铁路跨境旅客运输组织规则》第二十三条',
         id:11
       },
       {
@@ -28,5 +28,13 @@ Page({
         id: 13
       },
     ],
+  },
+  // 切换tab
+  toggleTabs:function(e){
+    const type = e.currentTarget.dataset.type;
+    console.log(type);
+    this.setData({
+      tab:type
+    });
   }
 })

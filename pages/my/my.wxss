@@ -1,0 +1,108 @@
+/* pages/my/my.wxss */
+
+/* header */
+.header{
+  display: flex;
+  flex-direction: column;
+  height: 380rpx;
+  width: 100%;
+  /* background-color:antiquewhite; */
+}
+.header-user{
+  display: flex;
+  width: 100%;
+  height: 50%;
+  background-color:var(--hue);
+}
+
+.user-left{
+  width:190rpx;
+  height: 100%;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+.user-left image{
+  width: 60%;
+  height: 60%;
+  border-radius:10000rpx;
+  background-color:gainsboro;
+}
+
+.user-right{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+.user-item{
+  color:white;
+}
+
+.nickname{
+  font-size: 20px;
+}
+.details{
+  display: flex;
+  align-items:center;
+}
+.sex{
+  font-size: 20px;
+}
+.phone{
+  margin-left: 5rpx;
+  font-size: 14px;
+}
+
+/* header 下 */
+
+.header-user-datum{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items:center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.datum-item{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+  border-right: 1rpx solid gainsboro;
+  border-bottom: 1rpx solid gainsboro;
+}
+.datum-item-top{
+  display: flex;
+  flex-direction: row;
+}
+
+.item-top-number{
+  margin-bottom: -10rpx;
+  font-size: 24px;
+  font-weight:bold;
+}
+
+.item-top-unit{
+  display: flex;
+  align-items:flex-end;
+  font-size: 10px;
+}
+
+.datum-item-below{
+  font-size: 12px;
+  margin-top: 10%;
+  margin-bottom: -10%;
+}
+
+/* header end */
+
+/* body */
+.body{
+  width: 100%;
+  height: 100%;
+  background-color: gainsboro;
+}
+/* body end */

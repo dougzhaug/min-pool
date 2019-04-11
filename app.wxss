@@ -2,6 +2,15 @@
 
 @import 'assets/icon/icon.wxss';
 
+@import 'assets/css/color.wxss';
+
+page{
+  /*基础色调*/
+  --hue:#108EE9;
+  /* 头部高度 */
+  --headerHeight:90rpx;
+}
+
 .container {
   height: 100%;
   /* display: flex;

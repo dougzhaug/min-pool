@@ -1,0 +1,29 @@
+<!--pages/search/search.wxml-->
+<view class='container'>
+  <!-- header -->
+  <view class='header'>
+    <view class="header-input">
+      <view class="header-icon iconfont iconsearch"></view>
+      <input placeholder="题目" auto-focus />
+    </view>
+    <view class="header-button" bindtap="cancelTab">取消</view>
+  </view>
+  <!-- header end -->
+  <view class='body'>
+    <view class="list-body">
+
+      <navigator wx:for="{{list}}"
+        wx:key="{{index}}"
+        url="/pages/detail/detail?sn={{itme.sn}}"
+        hover-class="navigator-hover"
+      >
+        <view class="list-item" >
+          <view class="item-title">{{item.sn}}. {{item.title}}</view>
+          <view class="item-icon"> <view class="iconfont iconnext"></view> </view>
+        </view>
+      </navigator>
+
+    </view>
+  </view>
+  <view class='footer'></view>
+</view>
