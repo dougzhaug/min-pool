@@ -2,11 +2,24 @@
 //获取应用实例
 const app = getApp()
 
+const api = require("./api.js");
+
 Page({
   data: {
     itemBody_1:true,
     itemBody_2: true,
     itemBody_3: true,
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+  //初始化
+  onLaunch: function () {
+
   },
 
   //切换item显示
