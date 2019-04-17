@@ -15,11 +15,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-  //初始化
-  onLaunch: function () {
-
+    api.getUserInfo({}).then(data=>{
+      console.log(data);
+    }).catch(error=>{
+      console.log(222);
+    });
   },
 
   //切换item显示
