@@ -32,7 +32,7 @@
         hover-class="navigator-hover"
       >
         <view class="list-item" >
-          <view class="item-title">{{item.sn}}. {{item.title}}</view>
+          <view class="item-title">{{item.sn}}. {{item.question}}</view>
           <view class="item-icon"> <view class="iconfont iconnext"></view> </view>
         </view>
       </navigator>

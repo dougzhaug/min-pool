@@ -1,109 +1,30 @@
+const api = require("./api.js");
+
 Page({
   data:{
+    subjectId:0,
     tab:'all',
-    list:[
-      {
-        sn:2,
-        title:'《广深港高速铁路跨境旅客运输组织规则》第二十三条',
-        id:11
-      },
-      {
-        sn: 30,
-        title: '公开考试的分卡喀什地方卡死了的房间拉萨的法拉利是的裂势力的',
-        id: 12
-      },
-      {
-        sn: 4,
-        title: '公开考试的分裂势力的',
-        id: 13
-      },
-      {
-        sn: 155,
-        title: '公开考试的分裂势力的',
-        id: 12
-      },
-      {
-        sn: 264,
-        title: '公开考试的分裂势力的',
-        id: 13
-      },
-      {
-        sn: 2,
-        title: '《广深港高速铁路跨境旅客运输组织规则》第二十三条',
-        id: 11
-      },
-      {
-        sn: 30,
-        title: '公开考试的分卡喀什地方卡死了的房间拉萨的法拉利是的裂势力的',
-        id: 12
-      },
-      {
-        sn: 4,
-        title: '公开考试的分裂势力的',
-        id: 13
-      },
-      {
-        sn: 155,
-        title: '公开考试的分裂势力的',
-        id: 12
-      },
-      {
-        sn: 264,
-        title: '公开考试的分裂势力的',
-        id: 13
-      },
-      {
-        sn: 2,
-        title: '《广深港高速铁路跨境旅客运输组织规则》第二十三条',
-        id: 11
-      },
-      {
-        sn: 30,
-        title: '公开考试的分卡喀什地方卡死了的房间拉萨的法拉利是的裂势力的',
-        id: 12
-      },
-      {
-        sn: 4,
-        title: '公开考试的分裂势力的',
-        id: 13
-      },
-      {
-        sn: 155,
-        title: '公开考试的分裂势力的',
-        id: 12
-      },
-      {
-        sn: 264,
-        title: '公开考试的分裂势力的',
-        id: 13
-      },
-      {
-        sn: 2,
-        title: '《广深港高速铁路跨境旅客运输组织规则》第二十三条',
-        id: 11
-      },
-      {
-        sn: 30,
-        title: '公开考试的分卡喀什地方卡死了的房间拉萨的法拉利是的裂势力的',
-        id: 12
-      },
-      {
-        sn: 4,
-        title: '公开考试的分裂势力的',
-        id: 13
-      },
-      {
-        sn: 155,
-        title: '公开考试的分裂势力的',
-        id: 12
-      },
-      {
-        sn: 264,
-        title: '公开考试的分裂势力的',
-        id: 13
-      },
-    ],
+    list:[],
   },
+  /**
+ * 生命周期函数--监听页面加载
+ */
+  onLoad: function (options) {
+    this.setData({
+      subjectId: options.id ? options.id : this.subjectId,
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    //获取类目信息
+    api.getPools({ subject_id: this.subjectId}).then(data => {
+      this.setData({ list: data.data })
+    });
+  },
+
   // 切换tab
   toggleTabs:function(e){
     const type = e.currentTarget.dataset.type;

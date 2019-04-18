@@ -9,16 +9,19 @@ Page({
     itemBody_1:true,
     itemBody_2: true,
     itemBody_3: true,
+    subjects:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    api.getUserInfo({}).then(data=>{
-      console.log(data);
+
+    //获取类目信息
+    api.getSubjects({}).then(data=>{
+      this.setData({ subjects:data})
     }).catch(error=>{
-      console.log(222);
+      console.log(error);
     });
   },
 

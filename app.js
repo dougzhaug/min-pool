@@ -76,14 +76,17 @@ App({
         header: Object.assign({}, headers, header),
         success(res) {
 
-          if(res.statusCode == 200){
-            //处理token
-            if (res.header.Authorization) {
-              wx.setStorageSync('token', res.header.Authorization);
-            }
+          //处理token
+          if (res.header.Authorization) {
+            wx.setStorageSync('token', res.header.Authorization);
+          }
 
+          if(res.statusCode == 200){
+    
             resolve(res.data);
+
           }else{
+            
             var error = res.data
             //处理http公共错误
             if(that.handleHttpError(error)){
