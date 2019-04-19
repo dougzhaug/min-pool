@@ -108,7 +108,7 @@
 
 .body-box{
   padding-top: 14rpx;
-  height: 50vh;
+  height: 70vh;
   /* background-color: red; */
 }
 .body-item{

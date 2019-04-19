@@ -1,44 +1,27 @@
 // pages/search/search.js
+
+const api = require("./api.js");
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [
-      {
-        sn: 2,
-        title: '《广深港高速铁路跨境旅客运输组织规则》第二十三条',
-        id: 11
-      },
-      {
-        sn: 30,
-        title: '公开考试的分卡喀什地方卡死了的房间拉萨的法拉利是的裂势力的',
-        id: 12
-      },
-      {
-        sn: 4,
-        title: '公开考试的分裂势力的',
-        id: 13
-      },
-      {
-        sn: 155,
-        title: '公开考试的分裂势力的',
-        id: 12
-      },
-      {
-        sn: 264,
-        title: '公开考试的分裂势力的',
-        id: 13
-      },
-    ],
+    subjectId:0,
+    list: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.id)
+    if (options.id !== undefined) {
+      this.setData({
+        subjectId: options.id ? options.id : this.subjectId,
+      })
+    }
   },
 
   /**
@@ -91,5 +74,11 @@ Page({
   },
   cancelTab:function(){
     wx.navigateBack({ changed: true });
+  },
+  //搜索绑定事件
+  search:function(e){
+    api.getPools({ subject_id: this.data.subjectId, keyword: e.detail.value }).then(data => {
+      this.setData({ list: data.data.length == 0 ? false : data.data})
+    });
   }
 })

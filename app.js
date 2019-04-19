@@ -53,11 +53,13 @@ App({
   //封装wx.request
   fetch: function (url, data, method, header) {
 
+    var headers = {};
+
     if (method == "GET") {
-      var headers = { 'Content-Type': 'application/json' }
+      headers = { 'Content-Type': 'application/json' }
     }
-    else if (method == "POST") {
-      var headers = { "Content-Type": "application/x-www-form-urlencoded" }
+    else if (method == "POST" || method == "PUT") {
+      headers = { "Content-Type": "application/x-www-form-urlencoded" }
     }
 
     //添加头部token
@@ -69,19 +71,25 @@ App({
     var that = this;
     //使用promise
     return new Promise(function (resolve, reject) {
+      //开启加载提示框
+      wx.showLoading({
+        title: '加载中...',
+        mask: true,
+      })
+
       wx.request({
         url: that.evn.host + url,
         data: data,
         method: method,
         header: Object.assign({}, headers, header),
         success(res) {
-
+          wx.hideLoading(); //关闭加载提示框
           //处理token
           if (res.header.Authorization) {
             wx.setStorageSync('token', res.header.Authorization);
           }
 
-          if(res.statusCode == 200){
+          if (res.statusCode >= 200 && res.statusCode < 300){
     
             resolve(res.data);
 
@@ -96,6 +104,7 @@ App({
           }
         },
         fail(error) {
+          wx.hideLoading(); //关闭加载提示框
           reject(error);
         }
       })
@@ -103,6 +112,9 @@ App({
   },
   //http异常公共处理
   handleHttpError:function(error){
+    if (error.message == 'Unauthenticated.'){
+      this.login();
+    }
     return true;
   },
   globalData: {

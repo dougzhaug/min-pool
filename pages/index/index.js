@@ -17,10 +17,16 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+
+  /**
+ * 生命周期函数--监听页面显示
+ */
+  onShow: function () {
     //获取类目信息
-    api.getSubjects({}).then(data=>{
-      this.setData({ subjects:data})
-    }).catch(error=>{
+    api.getSubjects({}).then(data => {
+      this.setData({ subjects: data })
+    }).catch(error => {
       console.log(error);
     });
   },

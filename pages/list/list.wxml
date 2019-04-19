@@ -15,8 +15,8 @@
 
     <view class="header-search">
       <navigator
-        url="/pages/search/search?type={{tab}}"
-        hover-class="navigator-hover"
+        url="/pages/search/search?id={{subjectId}}"
+        hover-class="none"
       >
         <view class="search-icon iconfont iconsearch"></view>
       </navigator>
@@ -28,8 +28,8 @@
 
       <navigator wx:for="{{list}}"
         wx:key="{{index}}"
-        url="/pages/detail/detail?sn={{itme.sn}}"
-        hover-class="navigator-hover"
+        url="/pages/detail/detail?id={{item.id}}&type={{tab}}"
+        hover-class="none"
       >
         <view class="list-item" >
           <view class="item-title">{{item.sn}}. {{item.question}}</view>

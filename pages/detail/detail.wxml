@@ -3,9 +3,13 @@
   <view class='body'>
     <!-- 问题 -->
     <view class='question'>
-      <view class="question-title"><view class="question-title-icon "></view> <view class="question-title-text">题目 ?</view> </view>
+      <view class="question-title">
+        <view class="question-title-icon ">
+        </view> <view class="question-title-text">题目 ?</view>
+        <view class="answers-title-button iconfont iconagreement {{detail.status==1 ? 'blue' : ''}}" bindtap="toggleRead"></view>
+      </view>
       <view class="question-content">
-        135.《广深港高速铁路跨境旅客运输组织规则》第二十三条 
+        {{detail.sn}}. {{detail.question}}
       </view>
     </view>
     <!-- 问题 end -->
@@ -18,9 +22,7 @@
       </view>
       <view class="answers-content">
         <view hidden="{{answersHidden}}">
-          第二十三条携带品超过规定范围的处理。
-(一）车上发现旅客携带的物品超重、超大时，须指定位置摆放，由列车长编制客运记录交旅客到站处理，对超过免费重量的物品，其超重部分按每千克20元核收运费，不足1千克按1千克计算。对不可分拆的整件超重、超大物品，按该件全部重量核收运费。
-(二）列车发现旅客已将前述第二十二条第（四）项规定的禁止、限制携带的物品带入车内时，均交由前方停车站处理。如前方停车站为香港西九龙站，按港铁公司适用的规定处理；如前方停车站为内地车站，按铁路总公司适用的规定处理。
+          {{detail.answers}}
         </view>
         <view hidden="{{!answersHidden}}">
           隐藏中。。。
@@ -30,8 +32,8 @@
     <!-- 答案 end -->
 
     <view class='button'>
-      <button type='primary' size=''>上一题</button>
-      <button type='primary' size=''>下一题</button>  
+      <button type='primary' data-type='last' bindtap="nextLastQuestion" size=''>上一题</button>
+      <button type='primary' data-type='next' bindtap="nextLastQuestion" size=''>下一题</button>  
     </view>
   </view>
   <view class='footer'></view>

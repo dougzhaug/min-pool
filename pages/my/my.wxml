@@ -5,32 +5,32 @@
     <view class="header-user">
       <view class="user-left">
         <image
-          src="http://wx.qlogo.cn/mmopen/An3cibgIYjcZ7jl2Dafaic1nt8mcDIHZKm611KmYeR9emPUvbiayJg4pH4LuxuISfJ1LOt9uzJ43ddgY8REGBBfGVjeLfjS0QVo/0"
+          src="{{user.avatar}}"
         ></image>
       </view>
       <view class="user-right">
-        <view class="user-item nickname">昵称</view>
-        <view class="user-item details"> <view class="sex iconfont iconxingbienan1"></view> <view class="phone">18830102005</view> </view>
+        <view class="user-item nickname">{{user.nickname}}</view>
+        <view class="user-item details"> <view class="sex iconfont {{user.gender==1 ? 'iconxingbienan1' : 'iconxingbienv1' }}"></view> <view class="phone">{{user.phone}}</view> </view>
       </view>
     </view>
     <view class="header-user-datum">
       <view class="datum-item">
         <view class="datum-item-top blue">
-          <view class="item-top-number">1</view>
+          <view class="item-top-number">{{user.read_num}}</view>
           <view class="item-top-unit">题</view>
         </view>
         <view class="datum-item-below">已背</view>
       </view>
       <view class="datum-item">
         <view class="datum-item-top orange">
-          <view class="item-top-number">221</view>
+          <view class="item-top-number">{{user.unread_num}}</view>
           <view class="item-top-unit">题</view>
         </view>
         <view class="datum-item-below">未背</view>
       </view>
       <view class="datum-item">
         <view class="datum-item-top green">
-          <view class="item-top-number">100</view>
+          <view class="item-top-number">{{user.point}}</view>
           <view class="item-top-unit">分</view>
         </view>
         <view class="datum-item-below">积分</view>
@@ -56,7 +56,7 @@
         <view class="body-item-next iconfont iconnext"></view>
       </view>
     </view>
-    <view class="body-footer red">退出登录</view>
+    <!-- <view class="body-footer red">退出登录</view> -->
   </view>
   <view class='footer'></view>
 </view>
