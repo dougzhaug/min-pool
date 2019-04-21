@@ -6,7 +6,7 @@ const config = {
 
   //开发环境
   dev: {
-    host:'http://api.pool.test',
+    host:'http://api.pool.loveliyuan.com',
   },
 
   //测试环境

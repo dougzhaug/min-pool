@@ -1,22 +1,40 @@
 
 /* 红色 */
 .red{
-  color:#FF2D2D;
+  color:var(--red);
 }
-/* 蓝色 */
-.blue{
-  color:#108EE9;
-}
+
 /* 橙色 */
 .orange{
-  color:#FF7F00;
+  color:var(--orange);
+}
+
+/* 黄色 */
+.yellow{
+  color:var(--yellow);
 }
 
 /* 绿色 */
 .green{
-  color:#02C874;
+  color:var(--green);
 }
+
+/* 青色 */
+.cyan{
+  color:var(--cyan);
+}
+
+/* 蓝色 */
+.blue{
+  color:var(--blue);
+}
+
+/* 紫色 */
+.purple{
+  color:var(--purple);
+}
+
 /* 灰色 */
 .gray{
-  color:#EAEAEA;
+  color:var(--gray);
 }

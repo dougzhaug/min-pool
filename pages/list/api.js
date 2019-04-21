@@ -6,11 +6,10 @@ const api = {
    */
   getPools: function (data) {
     var keyword = data.keyword == undefined ? '' : '/' + data.keyword
-    let url = '/pools/' + data.subject_id + keyword;
+    let url = '/pools/list' + keyword;
     let header = {};
 
-
-    return app.fetch(url, {}, 'GET', header);
+    return app.fetch(url, { "page": data.page,"per_page":10}, 'GET', header);
   }
 }
 

@@ -1,0 +1,5 @@
+<!--pages/test/test.wxml-->
+<view class="text">
+  <view class="iconfont iconshigong1"></view>
+施工中......
+</view>

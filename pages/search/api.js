@@ -6,7 +6,7 @@ const api = {
    */
   getPools: function (data) {
     var keyword = data.keyword == undefined ? '' : '/' + data.keyword
-    let url = '/pools/' + data.subject_id + keyword;
+    let url = '/pools/list' + keyword;
     let header = {};
 
 

@@ -40,21 +40,59 @@
   <!-- header end -->
   <view class='body'>
     <view class="body-box">
-      <view class="body-item">
+
+      <!-- 科目 -->
+      <navigator 
+        class="body-item"
+        url="/pages/subject/subject"
+        hover-class="none"
+      >
+        <view class="body-item-icon iconfont iconprivacy green"></view>
+        <view class="body-item-text">科目</view>
+        <view class="body-item-explain">{{user.subject.name}}</view>
+        <view class="body-item-next iconfont iconnext"></view>
+      </navigator>
+      <!-- 科目 end -->
+
+      <!-- 设置 -->
+      <view class="body-item" bindtap="abuilding">
         <view class="body-item-icon iconfont icondevicesettings red"></view>
         <view class="body-item-text">设置</view>
+        <view class="body-item-explain"></view>
         <view class="body-item-next iconfont iconnext"></view>
       </view>
-      <view class="body-item">
+      <!-- 设置 end -->
+
+      <!-- 意见反馈 -->
+      <navigator 
+        class="body-item" 
+        url="/pages/feedback/feedback"
+        hover-class="none"
+      >
+        <view class="body-item-icon iconfont iconvoice orange"></view>
+        <view class="body-item-text">意见反馈</view>
+        <view class="body-item-explain"></view>
+        <view class="body-item-next iconfont iconnext"></view>
+      </navigator>
+      <!-- 意见反馈 end -->
+
+      <!-- 安全中心 -->
+      <view class="body-item" bindtap="abuilding">
         <view class="body-item-icon iconfont iconsafety blue"></view>
         <view class="body-item-text">安全中心</view>
+        <view class="body-item-explain"></view>
         <view class="body-item-next iconfont iconnext"></view>
       </view>
-      <view class="body-item">
+      <!-- 安全中心 end -->
+
+      <!-- 客服中心 -->
+      <view class="body-item" bindtap="abuilding">
         <view class="body-item-icon iconfont icontelephone green"></view>
         <view class="body-item-text">客服中心</view>
+        <view class="body-item-explain"></view>
         <view class="body-item-next iconfont iconnext"></view>
       </view>
+      <!-- 客服中心 end -->
     </view>
     <!-- <view class="body-footer red">退出登录</view> -->
   </view>

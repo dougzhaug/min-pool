@@ -25,7 +25,10 @@
       </navigator>
 
     </view>
-    <view wx:else>没有内容哦。。。</view>
+    <view wx:else class="body-empty">
+      <view class="body-empty-icon iconfont iconlayered "></view>
+      空空如也
+    </view>
   </view>
   <view class='footer'></view>
 </view>

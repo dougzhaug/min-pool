@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+
+<view class='container'>
+  <view class='header'></view>
+  <view class='body'>
+    <!-- 需要使用 button 来授权登录 -->
+    <view class="logo">
+      <image
+        style="width: 300px; height: 300px; "
+        mode="scaleToFill"
+        src="/assets/images/gif/bear.gif"
+      ></image>
+    </view>
+    <view wx:if="{{canIUse}}" class="login">
+      <button
+        type="primary"
+        open-type="getUserInfo" 
+        bindgetuserinfo="bindGetUserInfo"
+      >授权登录</button>
+    </view>
+    
+    <view wx:else>请升级微信版本</view>
+  </view>
+  <view class='footer'></view>
+</view>

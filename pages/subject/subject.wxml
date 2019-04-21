@@ -1,0 +1,17 @@
+<!--subject.wxml-->
+
+<view class='container'>
+  <view class='header'></view>
+  <view class='body'>
+    <view class='pool-list'>
+      <view class='pool-item' wx:for="{{subjects}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toggleSubject">
+        <view class='item-title bg-color-{{item.hash}}'> 
+          <view class="item-title-icon iconfont iconbook_icon"></view> 
+          <view class='title'> {{item.name}} </view>
+        </view>
+        <view class="item-icon iconfont {{item.present==1?'iconselection':''}} bg-color-{{item.hash}}"></view>
+      </view>
+    </view>
+  </view>
+  <view class='footer'></view>
+</view>

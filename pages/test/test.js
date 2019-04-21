@@ -1,24 +1,18 @@
-// pages/my/my.js
-const app = getApp();
-
-const api = require("./api.js");
-
+// pages/test/test.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    user:[],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    api.getMy({}).then(data => {
-      this.setData({ user: data.user })
-    });
+
   },
 
   /**
@@ -68,8 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  abuilding:function(){
-    app.toast('施工中...');
   }
 })

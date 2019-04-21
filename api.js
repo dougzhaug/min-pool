@@ -1,16 +1,13 @@
-const app = getApp()
+// const app = getApp();
 
 const api = {
   /**
-   * 登录
+   * 获取个人中心信息
    */
-
-  getUserInfo:function(data={}){
-    url:'/get_user_info';
-
-    app.fetch(url, data, 'GET', {}, (success, data) => {
-      return data;
-    })
+  getMy: function (data) {
+    let url = '/my';
+    let header = {};
+    return this.fetch(url, {}, 'GET', header);
   }
 }
 

@@ -1,32 +1,37 @@
 {
   "pages": [
+    "pages/list/list",
     "pages/index/index",
     "pages/my/my",
-    "pages/list/list",
     "pages/search/search",
     "pages/detail/detail",
-    "pages/logs/logs"
+    "pages/subject/subject",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/feedback/feedback",
+    "pages/test/test"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#108EE9",
-    "navigationBarTitleText": "你好旧时光！",
+    "navigationBarTitleText": "铁路局非官方题库",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "selectedColor": "#108EE9",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "assets/images/home.png",
-        "selectedIconPath": "assets/images/home_h.png"
-      },
-      {
         "pagePath": "pages/list/list",
         "text": "题库",
-        "iconPath": "assets/images/layered.png",
-        "selectedIconPath": "assets/images/layered_h.png"
+        "iconPath": "assets/images/cangku.png",
+        "selectedIconPath": "assets/images/cangku_h.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "测试",
+        "iconPath": "assets/images/test.png",
+        "selectedIconPath": "assets/images/test_h.png"
       },
       {
         "pagePath": "pages/my/my",

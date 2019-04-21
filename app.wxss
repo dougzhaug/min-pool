@@ -7,16 +7,39 @@
 page{
   /*基础色调*/
   --hue:#108EE9;
+
   /* 头部高度 */
   --headerHeight:90rpx;
+
+  /* 红色 */
+  --red:#FF2D2D;
+
+  /* 橙色 */
+  --orange:#FF7F00;
+
+  /* 黄色 */
+  --yellow:#FFFF66;
+
+  /* 绿色 */
+  --green:#02C874;
+
+  /* 青色 */
+  --cyan:cyan;
+
+  /* 蓝色 */
+  --blue:#108EE9;
+
+  /* 紫色 */
+  --purple:#990066;
+
+  /* 灰色 */
+  /* --gray:#EAEAEA; */
+  --gray:#F5F5F5;
+
+  /* 黑色 */
+  --black:black;
 }
 
 .container {
   height: 100%;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  /* justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box; */
 } 

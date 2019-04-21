@@ -90,6 +90,20 @@
   font-size: 16px;
 }
 
+/* 隐藏层 */
+.conceal{
+  height: 36vh;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+
+.conceal-icon{
+  font-size: 40px;
+}
+/* 隐藏层 end */
+
 .button{
   display:flex;
   align-items:center;

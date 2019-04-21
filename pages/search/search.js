@@ -10,6 +10,7 @@ Page({
   data: {
     subjectId:0,
     list: [],
+    end:false,
   },
 
   /**
@@ -63,7 +64,23 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    if (!this.data.end) {
+      api.getPools({
+        subject_id: options.id,
+        keyword: this.tab,
+        page: this.data.meta.pagination.current_page + 1
+      }).then(data => {
+        if (data.data.length !== 0) {
+          this.setData({ list: this.data.list.concat(data.data), meta: data.meta })
+        } else {
+          app.toast('到底了');
+          this.setData({ end: true })
+        }
 
+      });
+    } else {
+      app.toast('到底了');
+    }
   },
 
   /**
@@ -77,8 +94,12 @@ Page({
   },
   //搜索绑定事件
   search:function(e){
-    api.getPools({ subject_id: this.data.subjectId, keyword: e.detail.value }).then(data => {
-      this.setData({ list: data.data.length == 0 ? false : data.data})
+    api.getPools({ keyword: e.detail.value }).then(data => {
+      this.setData({ 
+        list: data.data.length == 0 ? false : data.data, 
+        meta: data.meta,
+        end:false,
+      })
     });
   }
 })

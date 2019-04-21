@@ -1,0 +1,49 @@
+/* pages/feedback/feedback.wxss */
+.body{
+  width: 100%;
+}
+.body-form{
+  /* display: flex; */
+ /* flex-direction:row-reverse; */
+}
+.section{
+  
+    background-color: var(--gray);
+}
+
+.section-title{
+  display:flex;
+  justify-content:center;
+  align-items:Center;
+  height: 80rpx;
+}
+.section-title-text{
+  margin-top:10rpx; 
+  font-size: 16px;
+  width: 90%;
+  color: #696969;
+}
+.section-body{
+  display: flex;
+  justify-content:center;
+  align-items:Center;
+  border-top: 1rpx solid gainsboro;
+  border-bottom: 1rpx solid gainsboro;
+  height: 80rpx;
+  background-color: white;
+}
+.section-unit{
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+}
+.feedback{
+  padding:20rpx 0; 
+  height: 30vh;
+}
+
+.button{
+  margin-top: 100rpx;
+  border-top: 1rpx solid white;
+  border-bottom: 1rpx solid white;
+}

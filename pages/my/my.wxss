@@ -129,7 +129,12 @@
   font-size: 30px;
 }
 .body-item-text{
-  width: 90%;
+  width: 40%;
+}
+.body-item-explain{
+  width: 40%;
+  text-align:right;
+  color:gray;
 }
 
 .body-item-next{

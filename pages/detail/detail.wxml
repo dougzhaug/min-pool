@@ -22,10 +22,18 @@
       </view>
       <view class="answers-content">
         <view hidden="{{answersHidden}}">
-          {{detail.answers}}
+
+          <import src="../../plugins/wxParse/wxParse.wxml" />
+          <view class="wxParse">
+            <scroll-view scroll-y='true'>
+              <template is="wxParse" data="{{wxParseData:detail_answers.nodes}}" />
+            </scroll-view>
+          </view>
+
         </view>
-        <view hidden="{{!answersHidden}}">
-          隐藏中。。。
+        <view hidden="{{!answersHidden}}" class="conceal">
+          <view class="conceal-icon iconfont iconshut_down"></view>
+          隐藏中...
         </view>
       </view>
     </view>

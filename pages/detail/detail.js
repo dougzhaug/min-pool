@@ -1,9 +1,12 @@
+const app = getApp();
 
 const api = require("./api.js");
 
+const WxParse = require('../../plugins/wxParse/wxParse.js');
+
 Page({
   data: {
-    answersHidden: true,
+    answersHidden: false,
     detail:null,
     tabType:'all',
   },
@@ -11,6 +14,7 @@ Page({
  * 生命周期函数--监听页面加载
  */
   onLoad: function (options) {
+    var that = this;
     this.setData({
       tabType: options.type,
     })
@@ -19,9 +23,13 @@ Page({
       this.setData({ 
           detail: data.data[0],
         })
+      //富文本框
+      var answers = that.data.detail.answers;
+      WxParse.wxParse('detail_answers', 'html', answers, that, 5);
     }).catch(error => {
       console.log(error);
     });
+    
   },
   //切换答案显示状态
   toggleAnswers:function(){
@@ -61,15 +69,15 @@ Page({
       tabType:this.data.tabType 
     }).then(data => {
       if (data.data.length == 0) {
-        wx.showToast({
-          title: '没有更多内容了',
-          icon: 'success',
-          duration: 3000
-        });
+        app.toast('已经到头了');
       } else {
         that.setData({
           detail: data.data[0],
+          // answersHidden:true,
         })
+        //富文本框
+        var answers = that.data.detail.answers;
+        WxParse.wxParse('detail_answers', 'html', answers, that, 5);
       }
     })
   }

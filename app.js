@@ -1,21 +1,25 @@
 //app.js
 var config = require("./config/config.js");
 
+const api = require("./api.js");
+
 App({
   evn: config.dev,
 
   //初始化
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    var token = wx.getStorageSync('token');
+    
     // 登录
-    if (!token){
-      this.login();
+    if (!wx.getStorageSync('token')){
+      console.log('无token');
+      wx.navigateTo({
+        url: 'pages/login/login'
+      })
+    }else{
+      console.log('有token');
     }
+
+
   },
   //登录
   login: function () {
@@ -35,7 +39,9 @@ App({
                     iv: userInfo.iv
                   }
 
-                  this.fetch('/mini_program/login', requestData, 'POST', {'Authorization':''}).then(data=>{});
+                  this.fetch('/mini_program/login', requestData, 'POST', {'Authorization':''}).then(data=>{
+                    this.backAndRefresh();
+                  });
 
                   // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                   // 所以此处加入 callback 以防止这种情况
@@ -53,13 +59,16 @@ App({
   //封装wx.request
   fetch: function (url, data, method, header) {
 
-    var headers = {};
+    var headers = { 
+          "Page": this.globalData.page,       //页码
+          "PerPage": this.globalData.perPage  //每页数量
+        };
 
     if (method == "GET") {
-      headers = { 'Content-Type': 'application/json' }
+      headers.ContentType = "application/json";
     }
     else if (method == "POST" || method == "PUT") {
-      headers = { "Content-Type": "application/x-www-form-urlencoded" }
+      headers.ContentType = "application/x-www-form-urlencoded";
     }
 
     //添加头部token
@@ -117,7 +126,27 @@ App({
     }
     return true;
   },
+  //toast异常提示信息
+  toast: function (msg, duration){
+    wx.showToast({
+      title: msg,
+      image: '/assets/images/prompt.png',
+      duration: duration ? duration : 2000,
+    })
+  },
+  //返回上一页并刷新
+  backAndRefresh:function(){
+    var pages = getCurrentPages(); // 当前页面
+    var beforePage = pages[pages.length - 2]; // 前一个页面
+    wx.navigateBack({
+      success: function () {
+        beforePage.onLoad(); // 执行前一个页面的onLoad方法
+      }
+    });
+  },
   globalData: {
     userInfo: null,
+    page:3,
+    perPage:20,
   }
 })

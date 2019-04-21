@@ -1,0 +1,35 @@
+<!--pages/feedback/feedback.wxml-->
+<view class='container'>
+  <!-- header -->
+  <view class='header'>
+
+  </view>
+  <!-- header end -->
+
+  <!-- body -->
+  <view class='body'>
+    
+    <form class="" bindsubmit="formSubmit" bindreset="formReset">
+      <!-- <view class="body-form"> -->
+        <view class="section">
+          <view class="section-title">
+            <view class="section-title-text">意见反馈</view>
+          </view>
+          <view class="section-body feedback">
+            <textarea class="section-unit" name="feedback" placeholder="请描述具体问题" />
+          </view>
+        </view>
+        <view class="section">
+          <view class="section-title"><view class="section-title-text">联系电话（选填，便于我们与您联系）</view></view>
+          <view class="section-body"><input class="section-unit" type="idcard" maxlength="11" name="phone" placeholder="请输入手机号码" bindinput="inputPhoneNum"/></view>
+        </view>
+        <view class="section ">
+          <view class="section-body button"><button class="section-unit" form-type="submit" type="primary" name="switch" >提交</button></view>
+        </view>
+        
+      <!-- </view> -->
+    </form>
+  </view>
+  <!-- body end -->
+  <view class='footer'></view>
+</view>
