@@ -13,7 +13,7 @@ App({
     if (!wx.getStorageSync('token')){
       console.log('无token');
       wx.navigateTo({
-        url: 'pages/login/login'
+        url: '/pages/login/login'
       })
     }else{
       console.log('有token');
