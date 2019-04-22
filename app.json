@@ -15,7 +15,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#108EE9",
-    "navigationBarTitleText": "铁路局非官方题库",
+    "navigationBarTitleText": "中铁技术比武题库",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

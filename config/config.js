@@ -11,15 +11,11 @@ const config = {
 
   //测试环境
   test: {
-    api: {	//配置正式的api路径
-      agency: "https://xxxxxxxxx.com.cn/xxxxx",
-    }
+    host: 'http://api.pool.loveliyuan.com',
   },
   //生产环境
   production: {
-    api: {	//配置正式的api路径
-      agency: "https://xxxxxxxxx.com.cn/xxxxx",
-    }
+    host: 'https://api.pool.loveliyuan.com',
   },
 
 }

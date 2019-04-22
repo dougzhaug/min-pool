@@ -4,7 +4,7 @@ var config = require("./config/config.js");
 const api = require("./api.js");
 
 App({
-  evn: config.dev,
+  evn: config.production,
 
   //初始化
   onLaunch: function () {
