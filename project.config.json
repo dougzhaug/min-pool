@@ -12,8 +12,8 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
-	"appid": "wx51cf8c34a3465df8",
+	"libVersion": "2.1.0",
+	"appid": "wxd111a3d596e26b85",
 	"projectname": "min-pool",
 	"debugOptions": {
 		"hidedInDevtools": []

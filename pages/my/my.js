@@ -16,6 +16,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '个人中心'
+    })
+    wx.setBackgroundColor({
+      backgroundColor: '#108EE9', // 窗口的背景色为白色
+      backgroundColorBottom: '#EAEAEA', // 底部窗口的背景色为白色
+    })
     api.getMy({}).then(data => {
       this.setData({ user: data.user })
     });
