@@ -31,6 +31,14 @@ Page({
     });
     
   },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh();
+  },
+  
   //切换答案显示状态
   toggleAnswers:function(){
     if(this.data.answersHidden){

@@ -1,5 +1,17 @@
 <!--pages/test/test.wxml-->
-<view class="text">
-  <view class="iconfont iconshigong1"></view>
-施工中......
+
+<view class='container'>
+  <view class='header'>
+    <view class="left">测试统计</view>
+    <view class="right">成绩单</view>
+  </view>
+  <view class='body'>
+    <view class="switch">
+      <view class="switch-icon iconfont iconkaiguankongzhi" bindtap='startTest'></view>
+      <view class="switch-text">开始测试</view>
+    </view>
+    <view class="log">
+    </view>
+  </view>
+  <view class='footer'></view>
 </view>

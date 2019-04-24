@@ -4,7 +4,7 @@ var config = require("./config/config.js");
 const api = require("./api.js");
 
 App({
-  evn: config.production,
+  evn: config.dev,
 
   //初始化
   onLaunch: function () {
@@ -125,7 +125,9 @@ App({
   //http异常公共处理
   handleHttpError:function(error){
     if (error.message == 'Unauthenticated.'){
-      this.login();
+      wx.navigateTo({
+        url: '/pages/login/login'
+      })
     }
     return true;
   },
@@ -190,6 +192,7 @@ App({
     listTab:{
       tab: 'all',       //列表页的tab参数
       refresh:false     //进入列表页时是否需要刷新 false不需要 true需要
-    },  
+    },
+    testStatus:false,   //测试状态  
   }
 })

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/test/test",
     "pages/list/list",
     "pages/index/index",
     "pages/my/my",
@@ -9,8 +10,7 @@
     "pages/logs/logs",
     "pages/login/login",
     "pages/feedback/feedback",
-    "pages/test/test"
-    
+    "pages/testDetail/testDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -41,5 +41,6 @@
         "selectedIconPath": "assets/images/user_h.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

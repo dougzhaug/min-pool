@@ -1,15 +1,38 @@
 /* pages/test/test.wxss */
-.text{
+
+.header{
   display: flex;
   align-items:center;
   justify-content:center;
-  flex-direction:column;
-  width: 100%;
-  height: 90vh;
-  /* font-size: 20px; */
-  
+  height: 12vh;
+  color: var(--blue);
 }
-.iconfont{
-  font-size: 60px;
-  color:var(--red);
+.left{
+  padding-left: 50rpx;
+  width: 50%;
+}
+.right{
+  padding-right: 50rpx;
+  text-align:right;
+  width: 50%;
+}
+.body{
+  height: 85vh;
+}
+.switch{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  width: 100%;
+  height: 100%;
+}
+.switch-icon{
+  margin-top: 100rpx;
+  font-size: 90px;
+  color:var(--blue);
+}
+.switch-text{
+  margin-top: 20rpx;
+  font-size: 40rpx;
 }
