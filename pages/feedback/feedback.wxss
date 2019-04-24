@@ -29,7 +29,7 @@
   align-items:Center;
   border-top: 1rpx solid gainsboro;
   border-bottom: 1rpx solid gainsboro;
-  height: 80rpx;
+  height: 90rpx;
   background-color: white;
 }
 .section-unit{

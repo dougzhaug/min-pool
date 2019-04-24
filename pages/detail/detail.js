@@ -16,7 +16,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     this.setData({
-      tabType: options.type,
+      tabType: options.tab,
     })
     //获取类目信息
     api.getPoolDetail({pool_id: options.id}).then(data => {
@@ -61,6 +61,7 @@ Page({
       console.log(error);
     });
   },
+  //下一个上一个
   nextLastQuestion:function(e){
     var that = this;
     api.getNextOrLast({ 

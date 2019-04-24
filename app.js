@@ -4,7 +4,7 @@ var config = require("./config/config.js");
 const api = require("./api.js");
 
 App({
-  evn: config.dev,
+  evn: config.production,
 
   //初始化
   onLaunch: function () {
@@ -57,7 +57,7 @@ App({
     })
   },
   //封装wx.request
-  fetch: function (url, data, method, header) {
+  fetch: function (url, data, method, header, loading) {
 
     var headers = { 
           "Page": this.globalData.page,       //页码
@@ -75,16 +75,19 @@ App({
     var token = wx.getStorageSync('token');
     if (token) {
       headers.Authorization = token;
+    }else{
+      if (url !='/mini_program/login'){//其他不需要token的接口都需要写在这里
+        wx.navigateTo({
+          url: '/pages/login/login'
+        })
+      }
     }
 
     var that = this;
     //使用promise
     return new Promise(function (resolve, reject) {
       //开启加载提示框
-      wx.showLoading({
-        title: '加载中...',
-        mask: true,
-      })
+      that.showLoadingStyle(loading);
 
       wx.request({
         url: that.evn.host + url,
@@ -92,7 +95,7 @@ App({
         method: method,
         header: Object.assign({}, headers, header),
         success(res) {
-          wx.hideLoading(); //关闭加载提示框
+          that.hideLoadingStyle(loading); //关闭加载提示框
           //处理token
           if (res.header.Authorization) {
             wx.setStorageSync('token', res.header.Authorization);
@@ -113,7 +116,7 @@ App({
           }
         },
         fail(error) {
-          wx.hideLoading(); //关闭加载提示框
+          that.hideLoadingStyle(loading); //关闭加载提示框
           reject(error);
         }
       })
@@ -131,7 +134,7 @@ App({
     wx.showToast({
       title: msg,
       image: '/assets/images/prompt.png',
-      duration: duration ? duration : 2000,
+      duration: duration ? duration : 1500,
     })
   },
   //返回上一页并刷新
@@ -144,9 +147,49 @@ App({
       }
     });
   },
+  //显示加载样式
+  showLoadingStyle:function(style){
+    switch(style){
+      case 'close':
+        break;
+      case 'default':
+        wx.showLoading({
+          title: '加载中...',
+          mask: true,
+        })
+        break;
+      case 'other':
+        '未开发'
+        break
+      default:
+        wx.showLoading({
+          title: '加载中...',
+          mask: true,
+        })
+    }
+  },
+  //隐藏加载样式
+  hideLoadingStyle: function (style) {
+    switch (style) {
+      case 'close':
+        break;
+      case 'default':
+        wx.hideLoading()
+        break;
+      case 'other':
+        '未开发'
+        break
+      default:
+        wx.hideLoading()
+    }
+  },
   globalData: {
     userInfo: null,
-    page:3,
+    page:1,
     perPage:20,
+    listTab:{
+      tab: 'all',       //列表页的tab参数
+      refresh:false     //进入列表页时是否需要刷新 false不需要 true需要
+    },  
   }
 })

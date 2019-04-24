@@ -2,13 +2,13 @@
   <!-- header -->
   <view class='header'>
     <view class="header-tab">
-      <view class="tab-item {{tab=='all' ? 'tba-itme-action' : ''}}" bindtap="toggleTabs" data-type="all">
+      <view class="tab-item {{tab=='all' ? 'tba-itme-action' : ''}}" bindtap="toggleTabs" data-tab="all">
         <view class="tab-item-box">全部</view>
       </view>
-      <view class="tab-item {{tab=='read' ? 'tba-itme-action' : ''}}" bindtap="toggleTabs" data-type="read">
+      <view class="tab-item {{tab=='read' ? 'tba-itme-action' : ''}}" bindtap="toggleTabs" data-tab="read">
         <view class="tab-item-box">已背</view>
       </view>
-      <view class="tab-item {{tab=='unread' ? 'tba-itme-action' : ''}}" bindtap="toggleTabs" data-type="unread">
+      <view class="tab-item {{tab=='unread' ? 'tba-itme-action' : ''}}" bindtap="toggleTabs" data-tab="unread">
         <view class="tab-item-box">未背</view>
       </view>
     </view>
@@ -28,7 +28,7 @@
 
       <navigator wx:for="{{list}}"
         wx:key="{{index}}"
-        url="/pages/detail/detail?id={{item.id}}&type={{tab}}"
+        url="/pages/detail/detail?id={{item.id}}&tab={{tab}}"
         hover-class="none"
       >
         <view class="list-item" >

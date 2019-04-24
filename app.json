@@ -16,7 +16,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#108EE9",
     "navigationBarTitleText": "中铁技术比武题库",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "selectedColor": "#108EE9",

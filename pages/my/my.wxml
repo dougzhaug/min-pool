@@ -14,14 +14,14 @@
       </view>
     </view>
     <view class="header-user-datum">
-      <view class="datum-item">
+      <view class="datum-item" bindtap="toReadList">
         <view class="datum-item-top blue">
           <view class="item-top-number">{{user.read_num}}</view>
           <view class="item-top-unit">题</view>
         </view>
         <view class="datum-item-below">已背</view>
       </view>
-      <view class="datum-item">
+      <view class="datum-item" bindtap="toUnreadList">
         <view class="datum-item-top orange">
           <view class="item-top-number">{{user.unread_num}}</view>
           <view class="item-top-unit">题</view>
@@ -96,5 +96,5 @@
     </view>
     <!-- <view class="body-footer red">退出登录</view> -->
   </view>
-  <view class='footer'></view>
+  <!-- <view class='footer'></view> -->
 </view>

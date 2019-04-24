@@ -17,7 +17,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '个人中心'
+      title: '我的'
     })
     wx.setBackgroundColor({
       backgroundColor: '#108EE9', // 窗口的背景色为白色
@@ -60,7 +60,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    
+    wx.showNavigationBarLoading() //在标题栏中显示加载
 
+    api.getMy({},'close').then(data => {
+      this.setData({ user: data.user })
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }).catch(error=>{
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    });    
   },
 
   /**
@@ -78,5 +88,25 @@ Page({
   },
   abuilding:function(){
     app.toast('施工中...');
+  },
+  //跳转到列表页的已背题
+  toReadList:function(){
+    app.globalData.listTab = {
+      tab: 'read',       //列表页的tab参数
+      refresh: true     //进入列表页时是否需要刷新 false不需要 true需要
+    };
+    wx.switchTab({
+      url: '/pages/list/list'
+    })
+  },
+  //跳转到列表页的未背题
+  toUnreadList: function () {
+    app.globalData.listTab = {
+      tab: 'unread',       //列表页的tab参数
+      refresh: true     //进入列表页时是否需要刷新 false不需要 true需要
+    };
+    wx.switchTab({
+      url: '/pages/list/list'
+    })
   }
 })

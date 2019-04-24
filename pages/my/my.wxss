@@ -81,14 +81,14 @@
 
 .item-top-number{
   margin-bottom: -10rpx;
-  font-size: 24px;
+  font-size: 30px;
   font-weight:bold;
 }
 
 .item-top-unit{
   display: flex;
   align-items:flex-end;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .datum-item-below{
@@ -108,7 +108,7 @@
 
 .body-box{
   padding-top: 14rpx;
-  height: 70vh;
+  height: 71vh;
   /* background-color: red; */
 }
 .body-item{

@@ -13,6 +13,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '技术科目'
+    })
     //获取类目信息
     api.getSubjects({}).then(data => {
       this.setData({ subjects: data.subjects })
