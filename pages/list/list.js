@@ -29,6 +29,8 @@ Page({
 
     if (app.globalData.listTab.refresh) { //跳转来的，需要刷新数据
     
+      app.globalData.listTab.refresh = false;   //外部跳转进来后关闭显示刷新
+
       var tab = app.globalData.listTab.tab;  //外部跳转携带的参数
       console.log(tab);
       this.setData({
@@ -46,7 +48,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function (options) {
-    
+
     if(!this.data.end){
       api.getPools({
         subject_id: options.id,
