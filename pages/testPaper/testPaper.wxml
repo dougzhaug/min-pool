@@ -1,2 +1,64 @@
-<!--pages/testPaper/testPaper.wxml-->
-<text>试卷</text>
+
+<view class='container'>
+  <view class='header'></view>
+  <view class='body'>
+    <!-- 问题 -->
+    <view class='question'>
+      <view class="question-title">
+        <view class="question-title-icon ">
+        </view> <view class="question-title-text">题目 ?</view>
+        <view class="answers-title-button iconfont iconagreement {{detail.status==1 ? 'blue' : ''}}" bindtap="toggleRead"></view>
+      </view>
+      <view class="question-content">
+        {{detail.sn}}. {{detail.question}}
+      </view>
+    </view>
+    <!-- 问题 end -->
+    <!-- 答案 -->
+    <view class='answers'>
+      <view class="answers-title">
+        <view class="answers-title-icon "></view> 
+        <view class="answers-title-text">答案 !</view> 
+        <view class="answers-title-button iconfont {{answersHidden?'iconshut_down':'iconeye_protection'}}" bindtap="toggleAnswers"></view> 
+      </view>
+      <view class="answers-content">
+        <view hidden="{{answersHidden}}">
+
+          <import src="../../plugins/wxParse/wxParse.wxml" />
+          <view class="wxParse">
+            <scroll-view scroll-y='true'>
+              <template is="wxParse" data="{{wxParseData:detail_answers.nodes}}" />
+            </scroll-view>
+          </view>
+
+        </view>
+        <view hidden="{{!answersHidden}}" class="conceal">
+          <view class="conceal-icon iconfont iconshut_down"></view>
+          隐藏中...
+        </view>
+      </view>
+    </view>
+    <!-- 答案 end -->
+
+    <view class="score">
+      <view class="answers-title">
+        <view class="score-title-icon "></view> 
+        <view class="answers-title-text">打分 </view> 
+      </view>
+      <view 
+        wx:for="{{totalScore}}" 
+        wx:key="{{index}}"
+        class="score-item {{score > index ? 'selected' : ''}}" 
+        data-score="{{index+1}}"
+        bindtap='grade' 
+      >
+        {{index+1}}
+      </view>
+    </view>
+    <view class='button'>
+      <button type='primary' data-type='last' bindtap="nextLastQuestion" size=''>上一题</button>
+      <button type='primary' data-type='next' bindtap="nextLastQuestion" size=''>下一题</button>  
+    </view>
+  </view>
+  <view class='footer'></view>
+</view>

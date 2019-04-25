@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/testPaper/testPaper",
     "pages/test/test",
     "pages/list/list",
     "pages/index/index",
@@ -9,8 +10,8 @@
     "pages/subject/subject",
     "pages/logs/logs",
     "pages/login/login",
-    "pages/feedback/feedback",
-    "pages/testPaper/testPaper"
+    "pages/feedback/feedback"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

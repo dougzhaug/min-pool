@@ -4,6 +4,8 @@
 
 @import 'assets/css/color.wxss';
 
+@import 'assets/css/bg-color.wxss';
+
 page{
   /*基础色调*/
   --hue:#108EE9;

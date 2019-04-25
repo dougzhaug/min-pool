@@ -1,1 +1,156 @@
 /* pages/testPaper/testPaper.wxss */
+.body{
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  /* align-items:center; */
+  background-color: gainsboro;
+}
+
+.question{
+  min-height: calc(30vh);
+  /* min-height: 380rpx; */
+  /* width: 100%; */
+  margin: 20rpx 20rpx 0 20rpx ;
+  background-color: #fff;
+  border-radius:5px;
+}
+.question-title{
+  display:flex;
+  align-items:center;
+  height: 90rpx;
+  border-bottom: 1rpx solid gainsboro;
+}
+.question-title-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  /* width: 80rpx; */
+  height: 46%;
+  margin-left: 23rpx;
+  font-size: 32px;
+  border-left: 3px solid orange;
+}
+.question-title-text{
+  margin-left: 20rpx;
+  font-size: 20px;
+  font-weight:bold;
+}
+
+.question-content{
+  margin: 30rpx;
+  font-size: 18px;
+}
+
+.answers{
+  min-height: calc(55vh);
+  /* height: 50%; */
+  /* width: 100%; */
+  margin: 20rpx 20rpx 0 20rpx;
+  background-color: #fff;
+  border-radius:5px;
+}
+
+.answers-title{
+  width: 100%;
+  display:flex;
+  align-items:center;
+  height: 90rpx;
+  border-bottom: 1rpx solid gainsboro;
+}
+.answers-title-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  /* width: 80rpx; */
+  height: 46%;
+  margin-left: 23rpx;
+  font-size: 32px;
+  border-left: 3px solid var(--hue);
+}
+.answers-title-text{
+  margin-left: 20rpx;
+  font-size: 20px;
+  font-weight:bold;
+}
+
+.answers-title-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  /* background-color:gainsboro; */
+  border-radius:5px;
+  margin-left:58%;
+  font-size: 34px;
+  width: 120rpx;
+}
+
+.answers-content{
+  margin: 30rpx;
+  font-size: 16px;
+}
+
+/* 隐藏层 */
+.conceal{
+  height: 36vh;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+
+.conceal-icon{
+  font-size: 40px;
+}
+/* 隐藏层 end */
+
+.score{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin:20rpx 20rpx 0 20rpx;
+  padding:5rpx 10rpx 10rpx 10rpx; 
+  background-color: #fff;
+  border-radius:5px;
+}
+.score-title-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  /* width: 80rpx; */
+  height: 46%;
+  margin-left: 23rpx;
+  font-size: 32px;
+  border-left: 3px solid var(--green);
+}
+.score-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: .5%;
+  width: 18%;
+  /* height: 0; */
+  /* padding-top: 18%;  */
+  margin-top: 10rpx;
+  line-height:330%;
+  border:1rpx solid var(--blue);
+}
+.selected{
+  background-color: var(--blue);
+  color: white;
+}
+
+.button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height: calc(11vh);
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.button button{
+  width: 300rpx;
+}
