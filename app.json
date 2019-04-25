@@ -10,7 +10,7 @@
     "pages/logs/logs",
     "pages/login/login",
     "pages/feedback/feedback",
-    "pages/testDetail/testDetail"
+    "pages/testPaper/testPaper"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -12,10 +12,10 @@ const api = {
   },
 
   /**
-   * 结束测试
+   * 提交测试
    */
-  endTest: function (data) {
-    let url = '/test/end';
+  submitTest: function (data) {
+    let url = '/test/submit';
     let header = {};
 
     return app.fetch(url, {}, 'POST', header);
