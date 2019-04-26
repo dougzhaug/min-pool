@@ -103,11 +103,15 @@ Page({
     var that = this;
 
     api.startTest({}).then(data => {
-      console.log(data);
-      
+      wx.navigateTo({
+        url: '/pages/testPaper/testPaper',
+      })
     }).catch(error=>{
       if(error.code==40701){  //有暂停的测试未处理
         that.handleTestExists();
+      }
+      if (error.code == 40702) {  //测试进行中..
+        that.handleTestUnderway();
       }
     });
   },
@@ -121,12 +125,38 @@ Page({
       success(res) {
         if (res.confirm) {
           api.restartTest({}).then(data => {
-            
+            wx.navigateTo({
+              url:'/pages/testPaper/testPaper',
+            })
           })
           console.log('用户点击确定')
         } else if (res.cancel) {
           api.startAllOver().then(data=>{
-
+            wx.navigateTo({
+              url: '/pages/testPaper/testPaper',
+            })
+          })
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  //处理进行中的测试
+  handleTestUnderway: function () {
+    wx.showModal({
+      title: '提示',
+      content: '您有正在进行的测试！',
+      confirmText: '继续答题',
+      cancelText: '暂停',
+      success(res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '/pages/testPaper/testPaper',
+          })
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          api.pauseTest().then(data => {
+            app.toast('测试已经暂停');
           })
           console.log('用户点击取消')
         }

@@ -1,6 +1,14 @@
 
 <view class='container'>
-  <view class='header'></view>
+  <view class="timer">
+    <view class="timer-box-background"></view>
+    <view class="timer-box">
+      <view class="timer-icon iconfont icontest"></view>
+      <view class="timer-clock">{{clock}}</view>   
+    </view>
+  </view>
+  <view class='header'>
+  </view>
   <view class='body'>
     <!-- 问题 -->
     <view class='question'>

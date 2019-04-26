@@ -1,0 +1,6 @@
+<!--pages/demo/demo.wxml-->
+<view class="container">
+    <view bindtouchmove="touchmoveCallback" bindtouchstart="touchstartCallback">
+        <image src="/assets/images/svg/kai.svg" style="width: {{ touch.scaleWidth }}px;height: {{ touch.scaleHeight }}px" bindload="bindload"></image>
+    </view>
+</view>

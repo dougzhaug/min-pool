@@ -193,6 +193,9 @@ App({
       tab: 'all',       //列表页的tab参数
       refresh:false     //进入列表页时是否需要刷新 false不需要 true需要
     },
-    testStatus:false,   //测试状态  
+    test:{
+      sataus:-1,        //测试的状态  1测试中 2已完成 -2暂停中
+      currentId:0,      //用户当前测试的题号 
+    },
   }
 })
