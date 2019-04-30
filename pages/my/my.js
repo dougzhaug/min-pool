@@ -108,5 +108,13 @@ Page({
     wx.switchTab({
       url: '/pages/list/list'
     })
+  },
+  /**
+   * 客服
+   */
+  customerService:function(){
+    wx.makePhoneCall({
+      phoneNumber: '18830102005' // 仅为示例，并非真实的电话号码
+    })
   }
 })

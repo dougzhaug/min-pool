@@ -16,7 +16,7 @@ Page({
     detail: null,   //题信息
     totalScore:0,   //题目满分
     score:0,        //选中的分数
-    second:120,
+    second:7200,
     clock:'',
     timer:null,
   },
@@ -25,20 +25,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var time = this.formatDuring(5214);
-    this.countDown(); //开启计时器
-    // this.setData({
-    //   timer:timer,
-    // })
+
+    wx.setNavigationBarTitle({
+      title: '测试中'
+    })
+
     var that = this;
     var testCurrentId = wx.getStorageSync('test.currentId');
     //获取类目信息
     api.getTestQuestion({ current_id: testCurrentId}).then(data => {
-      this.setData({
+      that.setData({
         detail: data.data[0],
         score: data.data[0].score,
         totalScore: data.data[0].full_marks,
+        second:data.data[0].surplus
       })
+
+      that.countDown(); //开启计时器
+
       //富文本框
       var answers = that.data.detail.answers;
       WxParse.wxParse('detail_answers', 'html', answers, that, 5);
@@ -84,22 +88,27 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.showModal({
-      title: '警告',
-      content: '您正在答题，确认要离开吗?',
-      confirmText: '留下',
-      cancelText: '去意已决',
-      success(res) {
-        if (res.confirm) {
-          wx.navigateTo({
-            url: '/pages/testPaper/testPaper',
-          })
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
+    clearInterval(this.data.timer);
+    if (this.data.timer){
+      wx.showModal({
+        title: '警告',
+        content: '您正在答题，确认要离开吗?',
+        confirmText: '留下',
+        cancelText: '去意已决',
+        success(res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '/pages/testPaper/testPaper',
+            })
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            // app.backAndRefresh(); //返回并刷新
+            console.log('用户点击取消')
+          }
         }
-      }
-    })
+      })
+    }
+
   },
 
   /**
@@ -172,7 +181,22 @@ Page({
       score: this.data.score
     }).then(data => {
       if (data.data.length == 0) {
-        app.toast('已经到头了');
+        wx.showModal({
+          title: '提示',
+          content: '答题完毕，要马上交卷吗？',
+          confirmText: '交卷',
+          cancelText: '检查一下',
+          success(res) {
+            if (res.confirm) {
+              that.handleSubmit();
+              console.log('用户点击确定')
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+        
+        // app.toast('已经到头了');
       } else {
         wx.setStorageSync('test.currentId', data.data[0].id);
 
@@ -180,17 +204,36 @@ Page({
           detail: data.data[0],
           score: data.data[0].score,
           totalScore: data.data[0].full_marks,
+          answersHidden:true,
         })
 
         //富文本框
         var answers = that.data.detail.answers;
         WxParse.wxParse('detail_answers', 'html', answers, that, 5);
       }
+      }).catch(error=>{
+        if (error.code == 40705) {  //已到交卷时间
+          that.handleSubmit();
+        }
+      });
+  },
+  //处理交卷
+  handleSubmit:function(){
+    if (this.data.timer){
+      clearInterval(this.data.timer);
+      this.setData({
+        timer:null
+      })
+    }
+    api.submitTest({}).then(data => {
+      wx.navigateTo({
+        url: '/pages/testScore/testScore?score='+data.score,
+      })
     })
   },
 
   //生成时间格式
-  formatDuring:function(value){
+  formatDuring: function (value) {
     var theTime = parseInt(value);// 秒
     var middle = 0;// 分
     var hour = 0;// 小时
@@ -204,17 +247,35 @@ Page({
       }
     }
     var result = parseInt(theTime);
+    if (result == 0) {
+      result = "00";
+    } else if (result < 10) {
+      result = "0" + result;
+    }
     if (middle > 0) {
-      result = "" + parseInt(middle) + ":" + result;
+      if (middle < 10) {
+        result = "0" + parseInt(middle) + ":" + result;
+      } else {
+        result = "" + parseInt(middle) + ":" + result;
+      }
     }
     if (hour > 0) {
-      result = "" + parseInt(hour) + ":" + result;
+      if (middle == 0) {
+        result = "" + parseInt(hour) + ":00:" + result;
+      } else {
+        result = "" + parseInt(hour) + ":" + result;
+      }
+    } else {
+      if (middle == 0) {
+        result = "0:00:" + result;
+      } else {
+        result = "0:" + result;
+      }
     }
     return result;
-
   },
 
-//计时器
+  //计时器
   countDown: function () {
     let that = this;
     let second = that.data.second;//获取倒计时初始值
@@ -230,11 +291,16 @@ Page({
           clock: time,
         })
         //在倒计时还未到0时，这中间可以做其他的事情，按项目需求来
-        if (second == 0) {
+        if (second <= 0) {
           //这里特别要注意，计时器是始终一直在走的，如果你的时间为0，那么就要关掉定时器！不然相当耗性能
           //因为timer是存在data里面的，所以在关掉时，也要在data里取出后再关闭
           clearInterval(that.data.timer);
           //关闭定时器之后，可作其他处理codes go here
+          that.setData({
+            timer: null
+          })
+          //自动提交
+          that.handleSubmit();
         }
       }, 1000)
     })

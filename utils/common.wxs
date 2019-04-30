@@ -1,0 +1,48 @@
+
+var filters = {
+  //生成时间格式
+  formatDuring: function(value) {
+    var theTime = parseInt(value);// 秒
+    var middle = 0;// 分
+    var hour = 0;// 小时
+
+    if (theTime > 60) {
+      middle = parseInt(theTime / 60);
+      theTime = parseInt(theTime % 60);
+      if (middle > 60) {
+        hour = parseInt(middle / 60);
+        middle = parseInt(middle % 60);
+      }
+    }
+    var result = parseInt(theTime);
+    if (result==0){
+      result = "00";
+    } else if (result<10){
+      result = "0" + result;
+    }
+    if (middle > 0) {
+      if (middle < 10){
+        result = "0" + parseInt(middle) + ":" + result;
+      }else{
+        result = "" + parseInt(middle) + ":" + result;
+      }
+    }
+    if (hour > 0) {
+      if (middle==0){
+        result = "" + parseInt(hour) + ":00:" + result;
+      }else{
+        result = "" + parseInt(hour) + ":" + result;
+      }
+    }else{
+      if (middle == 0) {
+        result = "0:00:" + result;
+      } else {
+        result = "0:" + result;
+      }
+    }
+    return result;
+  }
+}
+module.exports = {
+  formatDuring: filters.formatDuring
+}

@@ -1,0 +1,18 @@
+<!--pages/testScore/testScore.wxml-->
+<view class='container'>
+  <view class='header'>
+    
+  </view>
+  <view class='body'>
+    <view class="score">
+      <view class="round">{{score}}</view>
+      <view class="explain">测试成绩为{{score}}，继续努力！</view>
+    </view>
+    
+    <view class="button">
+      <button type='primary' bindtap="startTest">再来一次</button>
+      <button type='primary' bindtap="goToTest">完成</button>
+    </view>
+  </view>
+  <view class='footer'></view>
+</view>

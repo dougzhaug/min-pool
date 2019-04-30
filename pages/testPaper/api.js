@@ -29,7 +29,17 @@ const api = {
     let header = {};
 
     return app.fetch(url, data, 'POST', header);
-  }
+  },
+  
+  /**
+   * 提交测试
+   */
+  submitTest: function (data) {
+    let url = '/tests/submit';
+    let header = {};
+
+    return app.fetch(url, {}, 'POST', header);
+  },
 }
 
 module.exports = api;

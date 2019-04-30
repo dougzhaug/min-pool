@@ -28,11 +28,16 @@
   height: 100%;
 }
 .switch-icon{
-  margin-top: 100rpx;
-  font-size: 90px;
+  margin-top: 80rpx;
+  font-size: 300rpx;
   color:var(--blue);
 }
 .switch-text{
-  margin-top: 20rpx;
+  /* margin-top: 10rpx; */
   font-size: 40rpx;
+  color:#909090;
+}
+.switch-button{
+  margin-top: 80rpx;
+  width: 300rpx;
 }

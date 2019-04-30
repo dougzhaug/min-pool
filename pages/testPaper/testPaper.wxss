@@ -37,6 +37,7 @@
   color:#009100;
   font-weight:bold;
   margin-right: 20rpx;
+  min-width: 100rpx;
 }
 
 .body{

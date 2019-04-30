@@ -30,7 +30,7 @@
       </view>
       <view class="datum-item">
         <view class="datum-item-top green">
-          <view class="item-top-number">{{user.point}}</view>
+          <view class="item-top-number">{{user.point?user.point:100}}</view>
           <view class="item-top-unit">分</view>
         </view>
         <view class="datum-item-below">积分</view>
@@ -86,7 +86,7 @@
       <!-- 安全中心 end -->
 
       <!-- 客服中心 -->
-      <view class="body-item" bindtap="abuilding">
+      <view class="body-item" bindtap="customerService">
         <view class="body-item-icon iconfont icontelephone green"></view>
         <view class="body-item-text">客服中心</view>
         <view class="body-item-explain"></view>

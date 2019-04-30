@@ -4,7 +4,7 @@
     <view class="timer-box-background"></view>
     <view class="timer-box">
       <view class="timer-icon iconfont icontest"></view>
-      <view class="timer-clock">{{clock}}</view>   
+      <view class="timer-clock">{{second>0?clock:''}}</view>   
     </view>
   </view>
   <view class='header'>

@@ -1,0 +1,44 @@
+<!--pages/scoresList/scoresList.wxml-->
+
+<wxs module="common" src="../../utils/common.wxs"></wxs>
+
+<view class='container'>
+  <!-- header -->
+  <view class='header'>
+    
+  </view>
+  <!-- header end -->
+  <view class='body'>
+    <view  class="list-body">
+
+      <view class="list-title">
+        <view class="list-item " style='font-weight:bold;'>
+          <view class="item-title">测试时间</view>
+          <view class="use-time">耗时</view>
+          <view class="item-icon"> 得分 </view>
+        </view>
+      </view>
+
+      <view wx:if="{{list}}" class="list-box">
+        <view wx:for="{{list}}"
+          wx:key="{{index}}"
+        >
+          <view class="list-item" >
+            <view class="item-title">{{item.time}}</view>
+            <view class="use-time" >{{common.formatDuring(item.useTime)}}</view>
+            <view class="item-icon"> {{item.score}} </view>
+          </view>
+        </view>
+      </view>
+      
+
+      <view wx:else class="body-empty">
+        <view class="body-empty-icon iconfont iconlayered "></view>
+        空空如也
+      </view>
+    </view>
+
+    
+  </view>
+  <view class='footer'></view>
+</view>

@@ -2,14 +2,35 @@
 
 <view class='container'>
   <view class='header'>
-    <view class="left">测试统计</view>
-    <view class="right">成绩单</view>
+    <navigator class="left" url="/pages/scoresList/scoresList" hover-class="none">历史成绩</navigator>
+    <view class="right"></view>
+    
   </view>
   <view class='body'>
-    <view class="switch">
-      <view class="switch-icon iconfont iconkaiguankongzhi" bindtap='startTest'></view>
-      <view class="switch-text">开始测试</view>
+
+    <view class="switch" wx:if="{{status == 1}}">
+      <view class="switch-icon iconfont iconplay" bindtap='pauseTest'></view>
+      <view class="switch-text">测试进行中...</view>
+      <view class="switch-button">
+        <button type='primary' bindtap="goToTestPaper">继续答题</button>
+      </view>
+      
     </view>
+    <view class="switch" wx:elif="{{status == -2}}">
+      <view class="switch-icon iconfont iconnextsong" bindtap='restartTest'></view>
+      <view class="switch-text">暂停</view>
+      <view class="switch-button">
+        <!-- <button type='primary' bindtap="goToTest">继续答题</button> -->
+      </view>
+    </view>
+    <view class="switch" wx:else>
+      <view class="switch-icon iconfont icontimeout" bindtap='startTest'></view>
+      <view class="switch-text">开始测试</view>
+      <view class="switch-button">
+        <!-- <button type='primary' bindtap="goToTest">继续答题</button> -->
+      </view>
+    </view>
+
     <view class="log">
     </view>
   </view>

@@ -1,0 +1,73 @@
+/* pages/scoresList/scoresList.wxss */
+
+
+/**body**/
+.list-item{
+  /* margin-top: 10rpx; */
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-bottom: 1rpx solid gainsboro;
+}
+
+.item-title{
+  display: flex;
+  align-items:center;
+  flex-direction: row;
+  font-size: 16px;
+  color:#272727;
+  width: 90%;
+  /* margin-left: 20rpx; */
+    /**多行自动隐藏**/
+  overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  /* background-color: blue; */
+  /* border-right: 1px solid #ff0010; */
+}
+.use-time{
+  font-size: 16px;
+  margin-right: 80rpx; 
+  width: 20%;
+}
+
+.item-icon{
+  font-size: 16px;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  /* background-color: khaki; */
+}
+.list-box{
+  margin-top: 110rpx;
+}
+.list-title{
+  position: fixed;
+  width: 100%;
+  top: 0rpx;
+  height: 110rpx;
+
+  background-color:var(--gray);
+}
+.list-title .list-item{
+  border-bottom: 1rpx solid var(--gray);
+}
+
+.body-empty{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction:column;
+  color:#909090;
+}
+.body-empty-icon{
+  font-size: 80px;
+}

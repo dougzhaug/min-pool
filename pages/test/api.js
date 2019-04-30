@@ -5,7 +5,7 @@ const api = {
    * 开始测试
    */
   startTest: function (data) {
-    let url = '/test/start';
+    let url = '/tests/start';
     let header = {};
 
     return app.fetch(url, {}, 'POST', header);
@@ -15,7 +15,7 @@ const api = {
    * 提交测试
    */
   submitTest: function (data) {
-    let url = '/test/submit';
+    let url = '/tests/submit';
     let header = {};
 
     return app.fetch(url, {}, 'POST', header);
@@ -24,7 +24,7 @@ const api = {
    * 暂停测试
    */
   pauseTest: function (data) {
-    let url = '/test/pause';
+    let url = '/tests/pause';
     let header = {};
 
     return app.fetch(url, {}, 'POST', header);
@@ -33,7 +33,7 @@ const api = {
    * 重启测试
    */
   restartTest: function (data) {
-    let url = '/test/restart';
+    let url = '/tests/restart';
     let header = {};
 
     return app.fetch(url, {}, 'POST', header);
@@ -42,10 +42,19 @@ const api = {
    * 从头再来
    */
   startAllOver: function (){
-    let url = '/test/start_all_over';
+    let url = '/tests/start_all_over';
     let header = {};
 
     return app.fetch(url, {}, 'POST', header);
+  },
+  /**
+   * 获取当前的测试状态
+   */
+  getTestStatus:function(){
+    let url = '/tests/get_status';
+    let header = {};
+
+    return app.fetch(url, {}, 'GET', header);
   }
 }
 

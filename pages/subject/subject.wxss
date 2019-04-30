@@ -39,7 +39,7 @@
 }
 .item-title-icon{
   margin-left: 20rpx;
-  font-size: 32px;
+  font-size: 80rpx;
 }
 .title{
   margin-left: 20rpx;
